@@ -10,6 +10,7 @@
 :root {
   --accent: #ff5522;
   --accent-light: #fff;
+  --accent-header: #00a8bf;
   --border: #dddddd;
   --border-strong: #e0a58b;
   --text-main: #444444;
@@ -17,8 +18,8 @@
   --header-bg: #333333;
   --page-bg: #efefef;
   --font-main: "Ubuntu", "Open Sans", Roboto, Arial, sans-serif;
-  --label-default: #b3302d; /* rouge */
-  --label-active: #004a90; /* bleu ENT */
+  --label-default: #b3302d;
+  --label-active: #004a90;
 }
 
 *,
@@ -34,63 +35,190 @@ body.auth-body {
   background: var(--page-bg);
 }
 
-/* HEADER */
+/* ========================================
+   HEADER — 3 couches style Studià
+   ======================================== */
 
 .uc-header {
   color: #ffffff;
+  background: #ffffff;
 }
+
+/* --- Couche 1 : barre noire --- */
 
 .uc-header-top {
   background: var(--header-bg);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 1120px;
-  margin: 0;
-  padding: 0.7rem 0 0.1rem 0.7rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.78rem;
+  color: #ffffff;
 }
 
-.uc-header-bottom {
-  background: var(--accent-light);
-}
-
-.uc-logo-text {
+.uc-top-left {
   display: flex;
-  flex-direction: row;
-  font-size: 0.8em;
-  font-weight: 500;
-  line-height: 1.3;
-  text-transform: uppercase;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .uc-logo-line1 {
+  font-weight: 600;
   text-transform: uppercase;
-  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.uc-top-sep {
+  opacity: 0.5;
 }
 
 .uc-logo-line2 {
   text-transform: uppercase;
+  font-weight: 400;
 }
 
 .uc-nav {
   display: flex;
   flex-wrap: nowrap;
   white-space: nowrap;
-  padding-left: 1.5rem;
-  gap: 1rem;
-  font-size: 0.8rem;
+  gap: 1.1rem;
+  margin-left: 1.5rem;
 }
 
 .uc-nav a {
   color: #ffffff;
   text-decoration: none;
+  font-size: 0.78rem;
 }
 
 .uc-nav a:hover {
   text-decoration: underline;
 }
 
-/* MAIN */
+.uc-login-link {
+  margin-left: auto;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.uc-login-link:hover {
+  text-decoration: underline;
+}
+
+.uc-icon {
+  width: 14px;
+  height: 14px;
+  fill: #ffffff;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* --- Couche 2 : bande logo + Studià branding --- */
+
+.uc-header-brand {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  background: #ffffff;
+  gap: 0.8rem;
+}
+
+.uc-brand-logo {
+  height: 52px;
+  width: auto;
+}
+
+.uc-brand-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.uc-brand-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-header);
+  letter-spacing: -0.5px;
+}
+
+.uc-brand-sep {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #cccccc;
+}
+
+.uc-brand-desc {
+  font-size: 0.95rem;
+  color: #888888;
+  font-weight: 400;
+}
+
+.uc-hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+.uc-hamburger svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--text-main);
+}
+
+/* --- Couche 3 : barre de navigation cyan --- */
+
+.uc-nav-cyan {
+  background: var(--accent-header);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 0.6rem;
+  overflow-x: auto;
+}
+
+.uc-nav-cyan a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.6rem 0.7rem;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+  transition: background 0.15s;
+}
+
+.uc-nav-cyan a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.uc-nav-cyan .uc-nav-active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.uc-nav-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px 0 0 !important;
+  height: 44px;
+}
+
+.uc-icon-home {
+  width: 14px;
+  height: 14px;
+  fill: #111111;
+}
+
+/* ========================================
+   MAIN — AUTH FORM
+   ======================================== */
 
 .auth-main {
   max-width: 1120px;
@@ -126,8 +254,10 @@ body.auth-body {
   border-top: 1px solid var(--border);
   padding: 1.2rem 1.4rem;
   background: #ffffff;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .auth-panel-block--top {
@@ -153,7 +283,7 @@ body.auth-body {
 
 .field-input {
   width: 100%;
-  border: 1px solid #b3302d; /* rouge de l’ENT */
+  border: 1px solid #b3302d;
   border-radius: 4px;
   padding: 1.2rem 0.75rem 1.2rem;
   font-size: 0.95rem;
@@ -192,7 +322,7 @@ body.auth-body {
 /* =========  Variante avec icône œil  ========= */
 
 .field--with-eye .field-input {
-  padding-right: 3rem; /* place pour le bouton à droite */
+  padding-right: 3rem;
 }
 
 .field-eye {
@@ -307,15 +437,38 @@ body.auth-body {
   color: #999999;
 }
 
-/* RESPONSIVE */
+/* ========================================
+   RESPONSIVE
+   ======================================== */
 
-@media (max-width: 720px) {
-  .uc-header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
+@media (max-width: 768px) {
+  .uc-header-top {
+    flex-wrap: wrap;
+    gap: 0.3rem;
   }
 
+  .uc-nav {
+    display: none;
+  }
+
+  .uc-login-link {
+    display: none;
+  }
+
+  .uc-brand-name {
+    font-size: 1.4rem;
+  }
+
+  .uc-brand-desc {
+    font-size: 0.8rem;
+  }
+
+  .uc-nav-cyan {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 720px) {
   .auth-main {
     margin-top: 1.2rem;
   }
@@ -344,8 +497,8 @@ body.auth-body {
   height: 100dvh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 9998;
-  /* iOS safe areas */
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 .cyber-modal {
@@ -361,8 +514,8 @@ body.auth-body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  /* iOS safe areas */
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 .cyber-modal-inner {
@@ -445,9 +598,12 @@ body.auth-body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* iOS safe areas - étendre le fond noir */
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  margin: calc(-1 * env(safe-area-inset-top, 0px)) calc(-1 * env(safe-area-inset-right, 0px)) calc(-1 * env(safe-area-inset-bottom, 0px)) calc(-1 * env(safe-area-inset-left, 0px));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+  margin: calc(-1 * env(safe-area-inset-top, 0px))
+    calc(-1 * env(safe-area-inset-right, 0px))
+    calc(-1 * env(safe-area-inset-bottom, 0px))
+    calc(-1 * env(safe-area-inset-left, 0px));
   box-sizing: content-box;
 }
 
@@ -517,45 +673,98 @@ body.auth-body {
 }
 
 @keyframes hackFlicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.95; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
 }
 
 @keyframes hackPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 @keyframes hackGlitch {
-  0%, 100% { transform: translate(0); }
-  20% { transform: translate(-3px, 3px); }
-  40% { transform: translate(3px, -3px); }
-  60% { transform: translate(-3px, -3px); }
-  80% { transform: translate(3px, 3px); }
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(3px, -3px);
+  }
+  60% {
+    transform: translate(-3px, -3px);
+  }
+  80% {
+    transform: translate(3px, 3px);
+  }
 }
 
 @keyframes hackGlitchBefore {
-  0%, 100% { transform: translate(0); }
-  20% { transform: translate(2px, 0); }
-  40% { transform: translate(-2px, 0); }
-  60% { transform: translate(2px, 0); }
-  80% { transform: translate(-2px, 0); }
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(2px, 0);
+  }
+  40% {
+    transform: translate(-2px, 0);
+  }
+  60% {
+    transform: translate(2px, 0);
+  }
+  80% {
+    transform: translate(-2px, 0);
+  }
 }
 
 @keyframes hackGlitchAfter {
-  0%, 100% { transform: translate(0); }
-  20% { transform: translate(-2px, 0); }
-  40% { transform: translate(2px, 0); }
-  60% { transform: translate(-2px, 0); }
-  80% { transform: translate(2px, 0); }
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 0);
+  }
+  40% {
+    transform: translate(2px, 0);
+  }
+  60% {
+    transform: translate(-2px, 0);
+  }
+  80% {
+    transform: translate(2px, 0);
+  }
 }
 
 @keyframes hackBlink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0.7; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0.7;
+  }
 }
 
 @keyframes hackSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -10,11 +10,12 @@
 <body class="auth-body">
 
   <header class="uc-header">
+    <!-- Barre noire du haut -->
     <div class="uc-header-top">
-      <div class="uc-logo-text">
+      <div class="uc-top-left">
         <span class="uc-logo-line1">UNIVERSITÀ DI CORSICA</span>
-        <span>      |      </span>
-        <span class="uc-logo-line2">Nos Portails :</span>
+        <span class="uc-top-sep">|</span>
+        <span class="uc-logo-line2">NOS PORTAILS :</span>
       </div>
       <nav class="uc-nav">
         <a href="#">Étudiants</a>
@@ -23,10 +24,34 @@
         <a href="#">Partenaires pro</a>
         <a href="#">Fondation</a>
       </nav>
+      <a href="#" class="uc-login-link">Se connecter <svg class="uc-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></a>
     </div>
-    <div class="uc-header-bottom">
-      <img src="logo.png" alt="">
+
+    <!-- Bande logo + titre Studià -->
+    <div class="uc-header-brand">
+      <img src="logo.png" alt="Université de Corse" class="uc-brand-logo">
+      <div class="uc-brand-title">
+        <span class="uc-brand-name">Studià</span>
+        <span class="uc-brand-sep">|</span>
+        <span class="uc-brand-desc">Le portail étudiant de l'Université de Corse</span>
+      </div>
+      <button class="uc-hamburger" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+      </button>
     </div>
+
+    <!-- Barre de navigation cyan -->
+    <nav class="uc-nav-cyan">
+      <a href="#" class="uc-nav-home" aria-label="Accueil"><svg class="uc-icon-home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V400 334c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v66 72c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></a>
+      <a href="#">ACTUALITÉS</a>
+      <a href="#">ORIENTATION ▾</a>
+      <a href="#">ÉTUDES ET SCOLARITÉ ▾</a>
+      <a href="#">VIE ÉTUDIANTE ▾</a>
+      <a href="#">BIBLIOTHÈQUE ▾</a>
+      <a href="#">INSERTION PRO ▾</a>
+      <a href="#">ENTREPRENEURIAT ▾</a>
+      <a href="#">INTERNATIONAL ▾</a>
+    </nav>
   </header>
 
   <main class="auth-main">
@@ -89,12 +114,12 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>account-question</title><path d="M13,8A4,4 0 0,1 9,12A4,4 0 0,1 5,8A4,4 0 0,1 9,4A4,4 0 0,1 13,8M17,18V20H1V18C1,15.79 4.58,14 9,14C13.42,14 17,15.79 17,18M20.5,14.5V16H19V14.5H20.5M18.5,9.5H17V9A3,3 0 0,1 20,6A3,3 0 0,1 23,9C23,9.97 22.5,10.88 21.71,11.41L21.41,11.6C20.84,12 20.5,12.61 20.5,13.3V13.5H19V13.3C19,12.11 19.6,11 20.59,10.35L20.88,10.16C21.27,9.9 21.5,9.47 21.5,9A1.5,1.5 0 0,0 20,7.5A1.5,1.5 0 0,0 18.5,9V9.5Z" /></svg>
           </a>
           <a href="#">Mot de passe oublié ?</a>
-          <a href="#">Besoin d’aide ?</a>
+          <a href="#">Besoin d'aide ?</a>
         </div>
 
         <p class="auth-security-note">
           Pour des raisons de sécurité, veuillez vous <span style="text-decoration: underline; color: #004e82;">déconnecter</span> et fermer votre navigateur
-          lorsque vous avez fini d’accéder aux services authentifiés.
+          lorsque vous avez fini d'accéder aux services authentifiés.
         </p>
       </div>
 
@@ -125,13 +150,13 @@
     <div class="cyber-modal-inner">
       <h2 id="cyber-modal-title">Exercice de sensibilisation à la cybersécurité</h2>
       <p>
-        Vous venez de commencer à saisir vos identifiants. Cette page fait partie d’un exercice de
-        sensibilisation organisé par l’Université de Corse : aucune donnée de connexion n’est enregistrée
-        et votre compte n’est à aucun moment exposé.
+        Vous venez de commencer à saisir vos identifiants. Cette page fait partie d'un exercice de
+        sensibilisation organisé par l'Université de Corse : aucune donnée de connexion n'est enregistrée
+        et votre compte n'est à aucun moment exposé.
       </p>
       <p>
         Dans la vie réelle, ne saisissez jamais vos identifiants ENT après un QR code ou un lien dont vous
-        n’êtes pas absolument sûr de la provenance.
+        n'êtes pas absolument sûr de la provenance.
       </p>
       <h3>Pour aller plus loin</h3>
       <ul class="cyber-links">
@@ -139,7 +164,7 @@
         <li><a class="cyber-link" data-link="anssi" href="https://www.ssi.gouv.fr/particulier/bonnes-pratiques/" target="_blank" rel="noopener noreferrer">Les bons réflexes selon l'ANSSI</a></li>
         <li><a class="cyber-link" data-link="secnumacademie" href="https://secnumacademie.gouv.fr/" target="_blank" rel="noopener noreferrer">MOOC SecNumacadémie (ANSSI)</a></li>
       </ul>
-      <button id="cyber-modal-close" class="cyber-modal-close">J’ai compris</button>
+      <button id="cyber-modal-close" class="cyber-modal-close">J'ai compris</button>
     </div>
   </div>
 
